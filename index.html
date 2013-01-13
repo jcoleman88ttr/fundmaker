@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Stock Chart Analysis</title>
+		<link href="style.css" rel="stylesheet" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="highstock.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var data = [[1000000,2],[2000000,6],[3000000,2],[4000000,9]];
+				var data2 = [[1000000,2],[2000000,5],[3000000,4],[4000000,7]];
+				window.chart = new Highcharts.StockChart({
+					chart : {
+						renderTo : 'graph'
+					},
+
+					rangeSelector : {
+						selected : 1
+					},
+
+					title : {
+						text : 'Portfolio Overview'
+					},
+					navigator : {
+						enabled : false
+					},
+					series : [{
+						name : 'Stock 1',
+						data : data,
+						tooltip: {
+							valueDecimals: 4
+						}
+					},
+					{
+						name : 'Stock 2',
+						data : data2,
+						tooltip: {
+							valueDecimals: 4
+						}
+					}]
+					
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1 style="color:#777;text-align:center;text-transform:uppercase;">Fund <span style="color:orange;">Maker</span></h1>
+		</header>
+		<section id="main">
+			<div id="alert"></div>
+			<div id="graph"></div>
+		</section>
+		<aside id="sidebar">
+			<section style="margin-top:2.5%;">
+				<h2>Add SYMBOL</h2>
+				<form>
+					<input type="text" name="symbol" id="symbol" value="Enter Symbol.." />
+				</form>
+			</section>
+			<section>
+				<h2 style="text-align:center;">Current Holdings</h2>
+				<ol>
+					<li>Item <span style="color:green;">%</span></li>
+					<li>Item <span style="color:green;">%</span></li>
+					<li>Item <span style="color:green;">%</span></li>
+					<li>Item <span style="color:green;">%</span></li>
+				</ol>
+			</section>
+			<section>
+				<h2 style="text-align:center;">Recommendations</h2>
+				<ol>
+					<li>Item</li>
+					<li>Item</li>
+					<li>Item</li>
+				</ol>
+			</section>
+		</aside>
+		<section id="columns">
+			<section class="col">
+				<h2>Intraday</h2>
+				<ul>
+					<li>Item <span style="color:green;">%</span></li>
+					<li>Item <span style="color:green;">%</span></li>
+					<li>Item <span style="color:green;">%</span></li>
+					<li>Item <span style="color:green;">%</span></li>
+				</ul>
+			</section>
+			<section class="col">
+				<h2>Weekly</h2>
+				<ul>
+					<li>Item <span style="color:green;">%</span></li>
+					<li>Item <span style="color:green;">%</span></li>
+					<li>Item <span style="color:green;">%</span></li>
+					<li>Item <span style="color:green;">%</span></li>
+				</ul>
+			</section>
+			<section class="col">
+				<h2>Monthly</h2>
+				<ul>
+					<li>Item <span style="color:green;">%</span></li>
+					<li>Item <span style="color:green;">%</span></li>
+					<li>Item <span style="color:green;">%</span></li>
+					<li>Item <span style="color:green;">%</span></li>
+				</ul>
+			</section>
+			<div class="clear"></div>
+		</section>
+		<footer>
+			<p>Copyright &copy; 2013.</p>
+		</footer>
+		
+	</body>
+</html>
